@@ -41,3 +41,24 @@ public extension IfLet where EmptyOut == EmptyView {
         })
     }
 }
+
+struct IfLet_Preview: PreviewProvider {
+    static let lol : String? = nil
+    
+    static var previews: some View {
+        VStack {
+            IfLet(IfLet_Preview.lol) { nlol in
+                VStack {
+                    Text("This won't appear because the variable used is nil")
+                    Text(nlol)
+                }
+            }
+            IfLet(IfLet_Preview.lol, { nlol in
+                Text(nlol)
+            }, else: {
+                Text("This text will appear, since the variable used is nil")
+            })
+        }.previewLayout(.sizeThatFits)
+            .padding(10)
+    }
+}

@@ -44,3 +44,22 @@ public extension IfBindingLet where EmptyOut == EmptyView {
         })
     }
 }
+
+struct IfBindingLet_Preview: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            IfBindingLet(Binding<String?>.constant(nil)) { nlol in
+                VStack {
+                    Text("This won't appear because the variable used is nil")
+                    TextField("Input", text: nlol)
+                }
+            }
+            IfBindingLet(Binding<String?>.constant(nil), { nlol in
+                TextField("Input", text: nlol)
+            }, else: {
+                Text("This text will appear, since the variable used is nil")
+            })
+        }.previewLayout(.sizeThatFits)
+            .padding(10)
+    }
+}
