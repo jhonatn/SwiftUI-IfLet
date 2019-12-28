@@ -26,6 +26,8 @@ public struct IfLet<T, Out: View, EmptyOut: View>: View {
         Group {
             if value != nil {
                 produce(value!)
+            } else {
+                produceIfNil()
             }
         }
     }

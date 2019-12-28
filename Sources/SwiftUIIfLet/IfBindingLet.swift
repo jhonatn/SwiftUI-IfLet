@@ -40,7 +40,7 @@ public extension IfBindingLet where EmptyOut == EmptyView {
          _ produce: @escaping (Binding<T>) -> Out)
     {
         self.init(value, produce, else: {
-                return EmptyView()
+            return EmptyView()
         })
     }
 }
