@@ -76,4 +76,4 @@ VStack {
 
 ## License
 
-SwiftUI-IfLet is released under the MIT license. [See LICENSE](https://github.com/baguio/SwiftUI-IfLet/blob/master/LICENSE.md) for details.
+SwiftUI-IfLet is released under the MIT license. [See LICENSE](https://github.com/baguio/SwiftUI-IfLet/blob/master/LICENSE) for details.
