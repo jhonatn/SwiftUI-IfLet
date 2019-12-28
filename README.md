@@ -30,6 +30,8 @@ dependencies: [
 
 ## Usage
 
+IfLet and IfBindingLet can only build one View at a time, but this view can be a View group (Groups, Stacks, etc)
+
 ### IfLet
 
 ```swift
