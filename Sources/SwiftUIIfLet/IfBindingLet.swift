@@ -26,8 +26,8 @@ public struct IfBindingLet<T, Out: View, EmptyOut: View>: View {
 
 public extension IfBindingLet {
     init(_ value: Binding<T?>,
-         _ produce: @escaping (Binding<T>) -> Out,
-         else produceIfNil: @escaping () -> EmptyOut )
+         @ViewBuilder _ produce: @escaping (Binding<T>) -> Out,
+         @ViewBuilder else produceIfNil: @escaping () -> EmptyOut )
     {
         self.init(value: value,
                   produce: produce,
@@ -37,7 +37,7 @@ public extension IfBindingLet {
 
 public extension IfBindingLet where EmptyOut == EmptyView {
     init(_ value: Binding<T?>,
-         _ produce: @escaping (Binding<T>) -> Out)
+         @ViewBuilder _ produce: @escaping (Binding<T>) -> Out)
     {
         self.init(value, produce, else: {
             return EmptyView()

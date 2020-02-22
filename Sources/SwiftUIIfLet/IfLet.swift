@@ -14,8 +14,8 @@ public struct IfLet<T, Out: View, EmptyOut: View>: View {
     let produceIfNil: () -> EmptyOut
 
     public init(_ value: T?,
-         _ produce: @escaping (T) -> Out,
-         else produceIfNil: @escaping () -> EmptyOut)
+         @ViewBuilder _ produce: @escaping (T) -> Out,
+         @ViewBuilder else produceIfNil: @escaping () -> EmptyOut)
     {
         self.value = value
         self.produce = produce
@@ -35,7 +35,7 @@ public struct IfLet<T, Out: View, EmptyOut: View>: View {
 
 public extension IfLet where EmptyOut == EmptyView {
     init (_ value: T?,
-          _ produce: @escaping (T) -> Out) {
+          @ViewBuilder _ produce: @escaping (T) -> Out) {
         self.init(value, produce, else: {
             return EmptyView()
         })
